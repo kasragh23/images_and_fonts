@@ -19,7 +19,7 @@ class _DecorationsState extends State<Decorations> {
     Colors.blue.shade900,
     Colors.yellowAccent,
   ];
-  Random _random = Random();
+  final Random _random = Random();
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _DecorationsState extends State<Decorations> {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text('You tapped on it $_counter times'),
-                duration: Duration(seconds: 1),
+                duration: const Duration(milliseconds: 800 ),
                 action: SnackBarAction(
                   label: 'Undo',
                   onPressed: () => setState(() {
@@ -40,7 +40,7 @@ class _DecorationsState extends State<Decorations> {
                 ),
               ),
             );
-            print('u tap $_counter');
+            print('u tap $_counter'); // to check it works correctly
 
             redie = colorss[_random.nextInt(colorss.length)];
           }),
